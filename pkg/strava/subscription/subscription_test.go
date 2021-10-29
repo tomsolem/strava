@@ -45,7 +45,6 @@ func (fn RoundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error) 
 }
 
 func (s Subscription) ViewSubscriptions() string {
-	// https://www.strava.com/api/v3/push_subscriptions?client_id=73481&client_secret=098354064d3347377b256313036a4243715f736c
 	reqUrl := fmt.Sprintf("https://www.strava.com/api/v3/push_subscriptions?client_id=%s&client_secret=%s", s.ClientID, s.ClientSecret)
 	resp, err := s.client.Get(reqUrl)
 	if err != nil {
